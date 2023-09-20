@@ -23,3 +23,6 @@ describe("POST /", function () {
     expect(resp.statusCode).toEqual(400);
   });
 });
+
+
+// TODO: Add a test that returns errors from validators (can copy and paste the failed response from insomnia to expect).

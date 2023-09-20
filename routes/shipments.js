@@ -7,6 +7,8 @@ const router = new express.Router();
 const { shipProduct } = require("../shipItApi");
 const jsonschema = require("jsonschema");
 const shipSchema = require("../schema/shipSchema.json");
+
+
 /** POST /ship
  *
  * VShips an order coming from json body:
@@ -16,10 +18,6 @@ const shipSchema = require("../schema/shipSchema.json");
  */
 
 router.post("/", async function (req, res, next) {
-  console.log("reqBody", req.body);
-  if (req.body === undefined) {
-    throw new BadRequestError();
-  }
 
   const result = jsonschema.validate(req.body, shipSchema, { required: true });
 
